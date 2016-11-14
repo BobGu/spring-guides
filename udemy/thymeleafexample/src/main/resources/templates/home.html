@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html land="en"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymleaf.org">
+
+<head>
+
+</head>
+
+<body>
+   <h2>The people</h2>
+   <p th:each="person : ${people}">
+      <p th:text="${person.name}"></p>
+      <p th:text="${person.birthPlace}"></p>
+      <p th:text="${person.favoriteHobby}"></p>
+   </p>
+</body>
+</html>
