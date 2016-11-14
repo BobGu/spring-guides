@@ -3,11 +3,9 @@ package com.example.controller;
 import com.example.pojo.People;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,11 +25,6 @@ public class HomeController {
         return "people";
     }
 
-    @ExceptionHandler(Exception.class)
-    public String handleException(HttpServletRequest req, Exception exception, Model model) {
-        model.addAttribute("errorMessage", exception.getMessage());
-        return "peopleError";
-    }
 
     private List<People> createPeople() {
         List<People> people = new ArrayList<People>();
