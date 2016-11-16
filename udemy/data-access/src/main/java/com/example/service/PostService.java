@@ -23,4 +23,8 @@ public class PostService {
     public List<Post> getAllPosts() {
         return postRepository.findAllByOrderByPostedOnDesc();
     }
+
+    public Post findByPostName(String postName) {
+        return postRepository.findByTitle(postName);
+    }
 }

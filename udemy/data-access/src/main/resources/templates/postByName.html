@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>The home page</title>
+</head>
+<body>
+<h2 th:text="${post.title}"></h2>
+<p th:text="${post.body}"></p>
+<p th:text="${post.author.firstName} + ' ' + ${post.author.lastName}"></p>
+</body>
+</html>
