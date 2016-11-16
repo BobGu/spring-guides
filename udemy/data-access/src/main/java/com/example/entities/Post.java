@@ -1,6 +1,9 @@
 package com.example.entities;
 
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class Post {
@@ -12,6 +15,9 @@ public class Post {
 
     @Column(columnDefinition = "TEXT")
     private String body;
+
+    @CreatedDate
+    private Date postedOn;
 
     private Post(){}
 
