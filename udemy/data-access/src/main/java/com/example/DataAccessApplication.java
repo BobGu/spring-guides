@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.entities.Post;
 import com.example.repository.PostRepository;
+import com.example.service.DataLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class DataAccessApplication {
 
 	@Autowired
 	PostRepository postRepository;
+
+	@Autowired
+	DataLoader dataLoader;
 
 	private static final Logger logger = LoggerFactory.getLogger(DataAccessApplication.class);
 

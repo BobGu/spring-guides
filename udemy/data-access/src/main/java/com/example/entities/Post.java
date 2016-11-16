@@ -1,9 +1,6 @@
 package com.example.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Post {
@@ -12,9 +9,16 @@ public class Post {
     @GeneratedValue
     private Long id;
     private String title;
+
+    @Column(columnDefinition = "TEXT")
     private String body;
 
     private Post(){}
+
+    public Post(String title, String body) {
+        this.title = title;
+        this.body = body;
+    }
 
     @ManyToOne
     private Author author;
@@ -41,6 +45,14 @@ public class Post {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     @Override
