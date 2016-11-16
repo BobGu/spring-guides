@@ -20,4 +20,10 @@ public class HomeController {
         model.addAttribute("post", postService.getLatestPost());
         return "home";
     }
+
+    @RequestMapping("/posts")
+    public String posts(Model model) {
+        model.addAttribute("posts", postService.getAllPosts());
+        return "posts";
+    }
 }

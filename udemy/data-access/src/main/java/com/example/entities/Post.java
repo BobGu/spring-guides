@@ -61,6 +61,14 @@ public class Post {
         this.author = author;
     }
 
+    public Date getPostedOn() {
+        return postedOn;
+    }
+
+    public void setPostedOn(Date postedOn) {
+        this.postedOn = postedOn;
+    }
+
     @Override
     public String toString() {
         return "Post{" +

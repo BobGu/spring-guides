@@ -5,6 +5,8 @@ import com.example.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PostService {
     private PostRepository postRepository;
@@ -16,5 +18,9 @@ public class PostService {
 
     public Post getLatestPost() {
         return postRepository.findFirstByOrderByPostedOnDesc();
+    }
+
+    public List<Post> getAllPosts() {
+        return postRepository.findAllByOrderByPostedOnDesc();
     }
 }
